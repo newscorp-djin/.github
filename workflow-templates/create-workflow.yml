@@ -7,7 +7,14 @@ on:
       template:
         type: choice
         description: 'Select template'
-        options: ${{ fromJSON(vars.TEMPLATE_LIST) }}
+        options:
+          - java
+          - dotnet
+          - python
+          - golang
+          - python-api-docker
+          - python-api-pypi
+          - groovy
       app_name:
         type: string
         description: 'Enter the name of the application'
