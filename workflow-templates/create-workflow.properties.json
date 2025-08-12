@@ -1,0 +1,9 @@
+{
+  "name": "Dowjones Workflow",
+  "description": "Super workflow for creating other workflows(build,deploy,etc.) and sample application skeleton.",
+  "iconName": "octicon infinity",
+  "categories": [
+    "Python"
+  ]
+}
+

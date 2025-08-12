@@ -1,0 +1,20 @@
+name: Application Events Workflow
+
+# Multiple trigger types
+on:
+  push:
+  pull_request:
+  issue_comment:
+  issues:
+  pull_request_review:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }} # Unique group for each workflow and branch
+  cancel-in-progress: true # Cancel old runs on new push
+
+jobs:
+  events-workflow:
+    uses: .github/.github/workflows/repo-events.yml@develop
+    secrets: inherit
+    with:
+      runner: ${{ vars.CUSTOM_RUNNER || (github.event_name == 'workflow_dispatch' && vars.MANUAL_RUNNER) || vars.DEFAULT_RUNNER }}

@@ -1,0 +1,21 @@
+name: Create Workflow
+
+# Multiple trigger types
+on:
+  workflow_dispatch:
+    inputs:
+      template:
+        type: choice
+        description: 'Select template'
+        options: ${{ fromJSON(vars.TEMPLATE_LIST) }}
+      app_name:
+        type: string
+        description: 'Enter the name of the application'
+  schedule:
+    - cron: '0 0 * * *'  # Daily at midnight UTC
+
+jobs:
+  # First shared workflow call
+  create-workflow:
+    uses: .github/.github/workflows/app-skeleton-generator.yml@main
+    secrets: inherit
