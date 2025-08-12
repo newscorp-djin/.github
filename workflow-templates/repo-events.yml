@@ -14,7 +14,5 @@ concurrency:
 
 jobs:
   events-workflow:
-    uses: .github/.github/workflows/repo-events.yml@develop
+    uses: newscorp-djin/github-workflows/.github/workflows/app-skeleton-generator.yml@main
     secrets: inherit
-    with:
-      runner: ${{ vars.CUSTOM_RUNNER || (github.event_name == 'workflow_dispatch' && vars.MANUAL_RUNNER) || vars.DEFAULT_RUNNER }}
