@@ -14,5 +14,5 @@ concurrency:
 
 jobs:
   events-workflow:
-    uses: newscorp-djin/github-workflows/.github/workflows/app-skeleton-generator.yml@main
+    uses: newscorp-djin/github-workflows/.github/workflows/repo-events.yml@main
     secrets: inherit
