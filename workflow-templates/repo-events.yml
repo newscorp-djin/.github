@@ -3,10 +3,16 @@ name: Z-Events
 # Multiple trigger types
 on:
   push:
+    paths-ignore:
+      - .github/**
   pull_request:
+    paths-ignore:
+      - .github/**
   issue_comment:
   issues:
   pull_request_review:
+    paths-ignore:
+      - .github/**
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }} # Unique group for each workflow and branch
