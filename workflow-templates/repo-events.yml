@@ -1,4 +1,4 @@
-name: Application Events Workflow
+name: Z-Events
 
 # Multiple trigger types
 on:

@@ -1,4 +1,4 @@
-name: Create Workflow
+name: Z-Cookiecutter
 
 # Multiple trigger types
 on:
